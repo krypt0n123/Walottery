@@ -28,9 +28,9 @@ const parseServerConfigs = (): KeyServerConfig[] => {
     }
   } catch {
     // fall back to comma-separated list
-    const parts = value.split(',').map((part) => part.trim()).filter(Boolean);
+    const parts = value.split(',').map((part: string) => part.trim()).filter(Boolean);
     if (parts.length) {
-      return parts.map((objectId) => ({ objectId, weight: 1 }));
+      return parts.map((objectId: string) => ({ objectId, weight: 1 }));
     }
   }
   return [];

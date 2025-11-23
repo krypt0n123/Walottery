@@ -27,11 +27,6 @@ const hexToBytes = (hex: string): Uint8Array => {
   return bytes;
 };
 
-const bytesToHex = (bytes: Uint8Array): string =>
-  Array.from(bytes)
-    .map((byte) => byte.toString(16).padStart(2, '0'))
-    .join('');
-
 export function LotteryDetailsDialog({ open, onClose, lottery, currentAddress }: Props) {
   const [decryptedInfos, setDecryptedInfos] = useState<Record<number, string>>({});
   const [decryptingIdx, setDecryptingIdx] = useState<number | null>(null);
@@ -100,7 +95,6 @@ export function LotteryDetailsDialog({ open, onClose, lottery, currentAddress }:
       const winnerAddress = winners[winnerIdx].toLowerCase();
       const identityRaw = `${sealConfig.identityPrefix}:${lottery.id}:${winnerAddress}`;
       const identityBytes = textEncoder.encode(identityRaw);
-      const identityHex = bytesToHex(identityBytes);
 
       const sessionKey = await SessionKey.create({
         address: currentAddress,

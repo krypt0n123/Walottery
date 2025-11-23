@@ -4,4 +4,4 @@ traces/*
 .coverage*
 node_modules
 .env
-log.md
+.vscode
