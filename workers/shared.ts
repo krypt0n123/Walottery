@@ -3,12 +3,12 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 export type WorkerEnv = {
   SUPABASE_URL: string;
-  SUPABASE_SERVICE_ROLE_KEY: string;
+  SUPABASE_SERVICE_ROLE_KEY: string;//need
   WALOTTERY_PACKAGE_ID: string;
   SUI_FULLNODE_URL?: string;
   SUI_NETWORK?: string;
   LOTTERY_API_ALLOWED_ORIGINS?: string;
-  LOTTERY_DRAW_PRIVATE_KEY?: string;
+  LOTTERY_DRAW_PRIVATE_KEY?: string;//need
   SUI_CLOCK_ID?: string;
   SUI_RANDOM_ID?: string;
   LOTTERY_INDEXER_PAGES_PER_RUN?: string;
